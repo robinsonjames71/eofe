@@ -60,9 +60,6 @@ mix.browserSync({
 // mix.combine(files, destination);
 // mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
 // mix.copy(from, to);
-mix.copy('./src/js/jquery.min.js', './dist');
-mix.copy('./src/js/extension/fullpage.parallax.min.js', './dist');
-mix.copy('./src/js/extension/scrolloverflow.js', './dist');
 // mix.copyDirectory(fromDir, toDir);
 // mix.minify(file);
 mix.sourceMaps(); // Enable sourcemaps

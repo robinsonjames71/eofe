@@ -12,11 +12,18 @@ $logos = get_field('logos');
 // create align class ("alignwide") from block setting ("wide")
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
+$post = get_post();
+if ( has_blocks( $post->post_content ) ) {
+	$blocks = parse_blocks( $post->post_content );
+	$order = array_map('getorder', $blocks);
+}
+$blockIndex = array_search($block['id'], $order);
+
 ?>
-<section id="<?php echo $anchor; ?>" class="eoe-block eoe-logos rellax <?php echo $id; ?>">
+<section id="<?php echo $anchor; ?>" class="eoe-block eoe-logos rellax <?php echo $id; ?>" data-rellax-zindex="<?= $blockIndex; ?>" data-rellax-speed="<?= $blockIndex; ?>">
 	<div class="container is-fluid" >
 		<div class="columns is-centered">
-			<div class="column is-9 rellax">
+			<div class="column is-9">
 				<div class="logos-container">
 					<?php
 						// Check columns exists.
@@ -34,6 +41,14 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 	<div class="background"></div>
 </section>
 <style type="text/css">
+	.<?php echo $id; ?> {
+		<?php
+			$bg_color = get_field('background');
+			if( $bg_color ):
+				echo 'background-color: ' . $bg_color .';';
+			endif;
+		?>
+	}
 	.<?php echo $id; ?> .background {
 		position: absolute;
 		top: 0;
@@ -42,13 +57,9 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 		height: 100%;
 		z-index: -1;
 		<?php
-			$bg_color = get_field('background');
 			$bg_img = get_field('background_image')['url'];
 			if($bg_img):
 				echo 'background-image: url("' . $bg_img .'");';
-			endif;
-			if( $bg_color ):
-				echo 'background-color: ' . $bg_color .';';
 			endif;
 		?>
 	}

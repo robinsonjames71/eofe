@@ -224,12 +224,18 @@ require('waypoints/lib/noframework.waypoints.min');
     const waypoint = new Waypoint({
       element: block,
       handler: (direction) => {
-        block.classList.remove('inactive');
-        if (block.id && navLinks.includes(`#${block.id}`)) {
-          activateMenu(block.id);
-        }
+        // console.log(block)
+        var bg = block.querySelector('.background')
+        var rellax = new Rellax(bg, {
+          speed: 2,
+          center: true
+        });
+
+        // block.classList.remove('inactive');
+        // if (block.id && navLinks.includes(`#${block.id}`)) {
+        //   activateMenu(block.id);
+        // }
       },
-      offset: waypointOffset
     });
   })
 

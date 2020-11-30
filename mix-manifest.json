@@ -1,7 +1,4 @@
 {
     "/dist/script.js": "/dist/script.js",
-    "/dist/style.css": "/dist/style.css",
-    "/dist/jquery.min.js": "/dist/jquery.min.js",
-    "/dist/fullpage.parallax.min.js": "/dist/fullpage.parallax.min.js",
-    "/dist/scrolloverflow.js": "/dist/scrolloverflow.js"
+    "/dist/style.css": "/dist/style.css"
 }
