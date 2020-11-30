@@ -45,55 +45,55 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 		</div>
 	</div>
 	<div class="background"></div>
-</section>
-<style type="text/css">
-	.<?php echo $id; ?> {
-		<?php
-			$bg_color = get_field('background');
-			if( $bg_color ):
-				echo 'background-color: ' . $bg_color .';';
-			endif;
-		?>
-	}
-	.<?php echo $id; ?> .background {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		<?php
-			$bg_img = get_field('background_image')['url'];
-			if($bg_img):
-				echo 'background-image: url("' . $bg_img .'");';
-			endif;
-		?>
-	}
-	.eoe-columns .col-header {
-		position: relative;
-		text-align: center;
-		margin-bottom: 10px;
-	}
-	.eoe-columns .col-header img {
-		max-width: 50%;
-	}
-	@media only screen and (min-width: 768px) {
-		.eoe-columns .col-header img {
-			max-width: 80%;
+	<style type="text/css">
+		.<?php echo $id; ?> {
+			<?php
+				$bg_color = get_field('background');
+				if( $bg_color ):
+					echo 'background-color: ' . $bg_color .';';
+				endif;
+			?>
 		}
-	}
-	@media only screen and (min-width: 1024px) {
+		.<?php echo $id; ?> .background {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			<?php
+				$bg_img = get_field('background_image')['url'];
+				if($bg_img):
+					echo 'background-image: url("' . $bg_img .'");';
+				endif;
+			?>
+		}
+		.eoe-columns .col-header {
+			position: relative;
+			text-align: center;
+			margin-bottom: 10px;
+		}
 		.eoe-columns .col-header img {
 			max-width: 50%;
 		}
-		.eoe-columns .col-header {
-			display: flex;
-			align-items: center;
-			margin-bottom: 20px;
-			text-align: left;
+		@media only screen and (min-width: 768px) {
+			.eoe-columns .col-header img {
+				max-width: 80%;
+			}
 		}
-		.eoe-columns .col-title {
-			margin-left: 10px;
+		@media only screen and (min-width: 1024px) {
+			.eoe-columns .col-header img {
+				max-width: 50%;
+			}
+			.eoe-columns .col-header {
+				display: flex;
+				align-items: center;
+				margin-bottom: 20px;
+				text-align: left;
+			}
+			.eoe-columns .col-title {
+				margin-left: 10px;
+			}
 		}
-	}
-</style>
+	</style>
+</section>

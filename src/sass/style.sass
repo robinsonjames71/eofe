@@ -23,11 +23,11 @@
 
 html, body
   width: 100%
-  scroll-behavior: smooth
+  // scroll-behavior: smooth
   color: #2B404E
 
 body
-  overflow: hidden
+  // overflow: hidden
   font-size: 18px
 
 .container, .container.is-fluid
@@ -35,26 +35,34 @@ body
   width: 100%
   padding-left: $mobile-gap
   padding-right: $mobile-gap
+  padding-top: 200px
+  // overflow: scroll
   +tablet
     padding-left: $gap
     padding-right: $gap
-    height: calc(100vh - 200px)
-    overflow: scroll
-    padding-bottom: 150px
   
 .eoe-block
-  position: relative
-  min-height: 100vh
-  width: 100vw
-  z-index: 1
-  padding-top: 200px
+  position: sticky
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100vh
   padding-bottom: 150px
-  scroll-snap-type: y proximity
-  scroll-snap-align: start
-  +tablet
-    padding-bottom: 0
-  +desktop
-    padding-top: 220px
+  overflow: scroll
+  // width: 100vw
+  // z-index: 1
+  // scroll-snap-type: y proximity
+  // scroll-snap-align: start
+
+  $count: 5
+  @for $i from 1 through 5 
+    &:nth-child(#{$i}) 
+      z-index: $count
+      $count: $count - 1
+    
+  
+  // +desktop
+  //   padding-top: 220px
 
   .container, .columns
     height: 100%

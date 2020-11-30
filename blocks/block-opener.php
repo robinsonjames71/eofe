@@ -13,6 +13,7 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 ?>
 
+</div>
 <div id="<?php echo $id; ?>" class="eoe-opener <?php echo $align_class; ?>">
   <div class="background"></div>
   <div class="path">
@@ -54,13 +55,14 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
       <img src="<?php echo get_template_directory_uri() ?>/static/eoe_animated.gif" alt="East of Everything Animation">
     </div>
   </div>
+  <style type="text/css">
+    #<?php echo $id; ?> {
+    }
+  
+    .eoe-opener .background {
+      /* The image used */
+      background-image: url("<?php echo get_template_directory_uri() ?>/static/map-background.png");
+    }
+  </style>
 </div>
-<style type="text/css">
-	#<?php echo $id; ?> {
-	}
-
-  .eoe-opener .background {
-    /* The image used */
-    background-image: url("<?php echo get_template_directory_uri() ?>/static/map-background.png");
-  }
-</style>
+<div class="wrapper">

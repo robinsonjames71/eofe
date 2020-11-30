@@ -42,28 +42,28 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 		</div>
 	</div>
 	<div class="background"></div>
+	<style type="text/css">
+		.<?php echo $id; ?> {
+			<?php
+				$bg_color = get_field('background');
+				if( $bg_color ):
+					echo 'background-color: ' . $bg_color .';';
+				endif;
+			?>
+		}
+		.<?php echo $id; ?> .background {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			<?php
+				$bg_img = get_field('background_image')['url'];
+				if($bg_img):
+					echo 'background-image: url("' . $bg_img .'");';
+				endif;
+			?>
+		}
+	</style>
 </section>
-<style type="text/css">
-	.<?php echo $id; ?> {
-		<?php
-			$bg_color = get_field('background');
-			if( $bg_color ):
-				echo 'background-color: ' . $bg_color .';';
-			endif;
-		?>
-	}
-	.<?php echo $id; ?> .background {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		<?php
-			$bg_img = get_field('background_image')['url'];
-			if($bg_img):
-				echo 'background-image: url("' . $bg_img .'");';
-			endif;
-		?>
-	}
-</style>
