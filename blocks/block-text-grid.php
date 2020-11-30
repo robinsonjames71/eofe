@@ -14,15 +14,9 @@ $count = count($grid);
 // create align class ("alignwide") from block setting ("wide")
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
-$post = get_post();
-if ( has_blocks( $post->post_content ) ) {
-	$blocks = parse_blocks( $post->post_content );
-	$order = array_map('getorder', $blocks);
-}
-$blockIndex = array_search($block['id'], $order);
 
 ?>
-<section id="<?php echo $anchor; ?>" class="eoe-block rellax eoe-text-grid <?php echo $id; ?>" data-rellax-zindex="<?= $blockIndex; ?>" data-rellax-speed="<?= $blockIndex; ?>">
+<section id="<?php echo $anchor; ?>" class="eoe-block  eoe-text-grid <?php echo $id; ?>" >
 	<div class="container is-fluid" >
 		<div class="columns is-multiline">
 			<div class="column is-12 is-3-desktop block-title">

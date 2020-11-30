@@ -13,15 +13,9 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 $blockTitle = get_field('block_title');
 $centered = get_field('centered');
 
-$post = get_post();
-if ( has_blocks( $post->post_content ) ) {
-	$blocks = parse_blocks( $post->post_content );
-	$order = array_map('getorder', $blocks);
-}
-$blockIndex = array_search($block['id'], $order);
 
 ?>
-<section id="<?php echo $anchor; ?>" class="eoe-block rellax eoe-text <?php echo $id; ?>" data-rellax-zindex="<?= $blockIndex; ?>" data-rellax-speed="<?= $blockIndex; ?>">
+<section id="<?php echo $anchor; ?>" class="eoe-block eoe-text <?php echo $id; ?>" >
 	<div class="container is-fluid" >
 		<div class="columns is-vcentered is-multiline <?= in_array('true', $centered) ? 'is-centered' : '' ?>">
 			<div class="column block-title is-12 is-3-desktop has-text-centered-mobile has-text-centered-touch">

@@ -31,12 +31,16 @@ body
   font-size: 18px
 
 .container, .container.is-fluid
+  box-sizing: border-box
   width: 100%
   padding-left: $mobile-gap
   padding-right: $mobile-gap
   +tablet
     padding-left: $gap
     padding-right: $gap
+    height: calc(100vh - 200px)
+    overflow: scroll
+    padding-bottom: 150px
   
 .eoe-block
   position: relative
@@ -47,6 +51,8 @@ body
   padding-bottom: 150px
   scroll-snap-type: y proximity
   scroll-snap-align: start
+  +tablet
+    padding-bottom: 0
   +desktop
     padding-top: 220px
 
