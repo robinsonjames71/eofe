@@ -62,6 +62,7 @@ mix.browserSync({
 // mix.copy(from, to);
 mix.copy('./src/js/jquery.min.js', './dist');
 mix.copy('./src/js/extension/fullpage.parallax.min.js', './dist');
+mix.copy('./src/js/extension/scrolloverflow.js', './dist');
 // mix.copyDirectory(fromDir, toDir);
 // mix.minify(file);
 mix.sourceMaps(); // Enable sourcemaps

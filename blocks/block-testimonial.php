@@ -15,7 +15,7 @@ $id = 'testimonial-' . $block['id'];
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 ?>
-<blockquote id="<?php echo $id; ?>" class="testimonial <?php echo $align_class; ?>">
+<blockquote id="<?php echo $id; ?>" class="section testimonial <?php echo $align_class; ?>">
     <p><?php the_field('testimonial'); ?></p>
     <cite>
     	<img src="<?php echo $avatar['url']; ?>" alt="<?php echo $avatar['alt']; ?>" />

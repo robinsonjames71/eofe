@@ -12,7 +12,7 @@ $anchor = str_replace(' ', '-', strtolower(get_field('id')));
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 ?>
-<section id="<?php echo $anchor; ?>" class="eoe-block eoe-contact <?php echo $id; ?>">
+<section id="<?php echo $anchor; ?>" class="section eoe-block eoe-contact <?php echo $id; ?>">
 	<div class="background fp-bg"></div>
 	<div class="container is-fluid" >
 		<div class="columns is-vcentered is-multiline">

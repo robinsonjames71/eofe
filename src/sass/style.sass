@@ -12,7 +12,7 @@
 @import "~bulma/sass/grid/columns.sass"
 @import "~bulma/sass/form/_all.sass"
 @import "~bulma/sass/layout/footer.sass"
-@import "~bulma/sass/layout/section.sass"
+// @import "~bulma/sass/layout/section.sass"
 @import "~bulma/sass/components/navbar.sass"
 
 // Layout
@@ -39,16 +39,19 @@ body
     padding-right: $gap
   
 .eoe-block
-  position: relative
-  min-height: 100vh
-  width: 100vw
-  z-index: 1
-  padding-top: 200px
-  padding-bottom: 150px
-  scroll-snap-type: y proximity
-  scroll-snap-align: start
-  +desktop
-    padding-top: 220px
+  // position: relative
+  // min-height: 100vh
+  // width: 100vw
+  // z-index: 1
+  // padding-top: 200px
+  // padding-bottom: 150px
+  // scroll-snap-type: y proximity
+  // scroll-snap-align: start
+  .container
+    padding-top: 200px
+    padding-bottom: 150px
+    +desktop
+      padding-top: 220px
 
   .container, .columns
     height: 100%

@@ -13,7 +13,7 @@ $logos = get_field('logos');
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 ?>
-<section id="<?php echo $anchor; ?>" class="eoe-block eoe-logos rellax <?php echo $id; ?>">
+<section id="<?php echo $anchor; ?>" class="section eoe-block eoe-logos rellax <?php echo $id; ?>">
 	<div class="background fp-bg"></div>
 	<div class="container is-fluid" >
 		<div class="columns is-centered">

@@ -142,26 +142,41 @@ require('waypoints/lib/noframework.waypoints.min');
       //   bottom: gifPos
       // })
   
+      var aniBlock = document.querySelector('.eoe-opener');
+      var aniGif = aniBlock.querySelector('.eoe-opener .eoe-animation');
+      var aniBlockBot = aniBlock.style.bottom;
+      const animationWaypoint = new Waypoint({
+        element: aniBlock,
+        handler: (direction) => {
+          console.log({direction})
+          if (direction === 'down') {
+            aniGif.style.position = 'absolute'
+            aniGif.style.bottom = gifPos
+          }
+          if (direction === 'up') {
+            aniGif.style.position = 'fixed'
+            aniGif.style.bottom = '0%'
+          }
+        },
+        offset: 'bottom-in-view'
+      });
+    
+      // Only update on animation frames
+      window.addEventListener("scroll", function() {
+        if (!requestId) {
+          requestId = requestAnimationFrame(update);
+        }
+      });
+    
+      update();
+    
+      // Set timeline time to scrollTop
+      function update() {
+        tl.time(window.pageYOffset + triggerOffset);
+        requestId = null;
+      }
   }
 
-  var aniBlock = document.querySelector('.eoe-opener');
-  var aniGif = aniBlock.querySelector('.eoe-opener .eoe-animation');
-  var aniBlockBot = aniBlock.style.bottom;
-  const animationWaypoint = new Waypoint({
-    element: aniBlock,
-    handler: (direction) => {
-      console.log({direction})
-      if (direction === 'down') {
-        aniGif.style.position = 'absolute'
-        aniGif.style.bottom = gifPos
-      }
-      if (direction === 'up') {
-        aniGif.style.position = 'fixed'
-        aniGif.style.bottom = '0%'
-      }
-    },
-    offset: 'bottom-in-view'
-  });
 
   // Rellax for parallax effects
   // if (docWidth > 768) {
@@ -170,11 +185,10 @@ require('waypoints/lib/noframework.waypoints.min');
   //   });
   // }
 
-  var myfullpage = new fullpage('#fullpage', {
-    // licenseKey: 'B9DB5606-2ACA4E7A-A3293FE8-9EA4C16C',
-    // menu: '#menu',
-    sectionSelector: 'eoe-block',
-		slidesNavigation: true,
+  var myfullpage = new fullpage('.fullpage', {
+    licenseKey: null,
+    menu: '.header',
+    // sectionSelector: 'eoe-block',
 		parallax: true,
 		// parallaxKey: 'YWx2YXJvdHJpZ28uY29tXzlNZGNHRnlZV3hzWVhnPTFyRQ==',
 		parallaxOptions: {
@@ -183,24 +197,9 @@ require('waypoints/lib/noframework.waypoints.min');
 			property: 'translate'
 		},
 		scrollingSpeed: 1000,
-		autoScrolling: true,
-		fitToSection:false
+    fitToSection: false,
+    scrollOverflow: true,
   });
-    
-  // Only update on animation frames
-  window.addEventListener("scroll", function() {
-    if (!requestId) {
-      requestId = requestAnimationFrame(update);
-    }
-  });
-
-  update();
-
-  // Set timeline time to scrollTop
-  function update() {
-    tl.time(window.pageYOffset + triggerOffset);
-    requestId = null;
-  }
 
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
