@@ -1,0 +1,78 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<!-- <a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a> -->
+		<header class="header" >
+			{% block header %}
+				<nav id="nav-main" class="nav-main" role="navigation">
+					<div class="nav-inner">
+						<div class="nav-brand">
+							<a class="navbar-item" href="/">
+								east of everything <br />
+								strategic / creative <br />
+								consultancy
+							</a>
+							<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+							</a>
+						</div>
+						<div class="navbar-menu" id="navMenu">
+							<ul>
+								{% for link in post.meta('anchor_links') %}
+									<li class="navbar-item">
+										<a target="" href="#{{ link.link|lower|replace({' ':'-',"'":'','"':''}) }}">{{ link.link }}{{ loop.last ? '' : '&nbsp;/'}}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+						<!-- {% include "menu.twig" with {'items': menu.get_items} %} -->
+					</div>
+				</nav>
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper fullpage {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<!-- <footer id="footer">
+				{% include 'footer.twig' %}
+			</footer> -->
+			{{ function('wp_footer') }}
+		{% endblock %}
+		<style>
+			body {
+				background: url("{{ Image(post.meta('page_bgimg')).src }}");
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			@media only screen and (max-width: 768px) {
+				body {
+					background-position: bottom;
+					background-size: contain;
+				}
+			}
+		</style>
+	</body>
+</html>

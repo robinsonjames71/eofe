@@ -1,0 +1,97 @@
+$bg-offset: 18px
+
+.header
+  position: relative
+  z-index: 100
+
+.nav-main
+  position: fixed
+  top: 10px
+  width: 100%
+  z-index: 100
+  font-size: 30px
+  color: $black
+  +tablet
+    top: 20px
+
+  +desktop
+    top: 50px
+    margin-left: 80px
+    margin-right: 80px
+    font-size: 26px
+
+    .nav-inner
+      display: flex
+      width: calc(100% - 160px)
+
+    .navbar-item
+      padding: 0
+
+    li
+      margin-right: auto
+      &:last-child
+        margin-right: 0
+
+  +widescreen
+    font-size: 30px
+  
+  .navbar-burger
+    display: inline-block
+
+    +desktop
+      display: none
+
+  .nav-brand
+    display: inline-block
+    position: relative
+    text-decoration: underline
+    background-color: rgba(255,255,255,0.6)
+    width: 100%
+
+    .navbar-item, .navbar-burger
+      display: inline-block
+    
+    .navbar-burger
+      float: right
+    
+    +desktop
+      width: auto
+      min-width: 217px
+
+      .navbar-item, .navbar-burger
+        display: inline-block
+
+      .navbar-burger
+        display: none
+        float: none
+
+  .navbar-menu
+    +desktop
+      margin-left: auto
+
+  .navbar-item, .navbar-link
+    line-height: 1.2
+    &:focus, &:focus-within, &:hover
+      color: #57937A
+    &.is-active, &.is-active a
+      color: #9B1D23
+
+  ul, li
+    display: inline-block
+    font-family: $family-secondary
+    
+  ul
+    position: relative
+    margin-left: auto
+    background-color: rgba(255,255,255,0.6)
+    font-style: italic
+    max-width: 1072px
+    width: 100%
+    display: flex
+    +desktop
+      margin-left: 100px
+    +widescreen
+      margin-left: 160px
+
+  a
+    color: $black
