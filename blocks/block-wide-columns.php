@@ -13,8 +13,7 @@ $columns = get_field('columns');
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 ?>
-<section id="<?php echo $anchor; ?>" class="section eoe-block eoe-wide-columns <?php echo $id; ?>">
-	<div class="background fp-bg"></div>
+<section id="<?php echo $anchor; ?>" class="eoe-block eoe-wide-columns <?php echo $id; ?>">
 	<div class="container is-fluid" >
 		<div class="columns is-centered">
 		<?php
@@ -41,24 +40,25 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 		?>
 		</div>
 	</div>
-	<style type="text/css">
-		.<?php echo $id; ?> .background {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-			<?php
-				$bg_color = get_field('background');
-				$bg_img = get_field('background_image')['url'];
-				if($bg_img):
-					echo 'background-image: url("' . $bg_img .'");';
-				endif;
-				if( $bg_color ):
-					echo 'background-color: ' . $bg_color .';';
-				endif;
-			?>
-		}
-	</style>
+	<div class="background"></div>
 </section>
+<style type="text/css">
+	.<?php echo $id; ?> .background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		<?php
+			$bg_color = get_field('background');
+			$bg_img = get_field('background_image')['url'];
+			if($bg_img):
+				echo 'background-image: url("' . $bg_img .'");';
+			endif;
+			if( $bg_color ):
+				echo 'background-color: ' . $bg_color .';';
+			endif;
+		?>
+	}
+</style>

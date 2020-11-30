@@ -15,16 +15,16 @@ $id = 'testimonial-' . $block['id'];
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 ?>
-<blockquote id="<?php echo $id; ?>" class="section testimonial <?php echo $align_class; ?>">
+<blockquote id="<?php echo $id; ?>" class="testimonial <?php echo $align_class; ?>">
     <p><?php the_field('testimonial'); ?></p>
     <cite>
     	<img src="<?php echo $avatar['url']; ?>" alt="<?php echo $avatar['alt']; ?>" />
     	<span><?php the_field('author'); ?></span>
     </cite>
-		<style type="text/css">
-			#<?php echo $id; ?> {
-				background: <?php the_field('background_colour'); ?>;
-				color: <?php the_field('text_colour'); ?>;
-			}
-		</style>
 </blockquote>
+<style type="text/css">
+	#<?php echo $id; ?> {
+		background: <?php the_field('background_colour'); ?>;
+		color: <?php the_field('text_colour'); ?>;
+	}
+</style>

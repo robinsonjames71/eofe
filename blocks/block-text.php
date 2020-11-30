@@ -14,8 +14,7 @@ $blockTitle = get_field('block_title');
 $centered = get_field('centered');
 
 ?>
-<section id="<?php echo $anchor; ?>" class="section eoe-block eoe-text <?php echo $id; ?>">
-	<div class="background fp-bg"></div>
+<section id="<?php echo $anchor; ?>" class="eoe-block eoe-text <?php echo $id; ?>">
 	<div class="container is-fluid" >
 		<div class="columns is-vcentered is-multiline <?= in_array('true', $centered) ? 'is-centered' : '' ?>">
 			<div class="column block-title is-12 is-3-desktop has-text-centered-mobile has-text-centered-touch">
@@ -26,48 +25,49 @@ $centered = get_field('centered');
 			</div>
 		</div>
 	</div>
-	<style type="text/css">
-		.<?php echo $id; ?> .background {
+	<div class="background"></div>
+</section>
+<style type="text/css">
+	.<?php echo $id; ?> .background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		<?php
+			$bg_color = get_field('background');
+			$bg_img = get_field('background_image')['url'];
+			if($bg_img):
+				echo 'background-image: url("' . $bg_img .'");';
+			endif;
+			if( $bg_color ):
+				echo 'background-color: ' . $bg_color .';';
+			endif;
+		?>
+	}
+	.eoe-text .text * + * {
+		margin-top: 20px;
+	}
+	.eoe-text .text p + p {
+		margin-top: 10px;
+	}
+	.eoe-text p {
+		font-size: 18px;
+	}
+	.eoe-text .columns {
+		position: relative;
+	}
+	@media only screen and (min-width: 768px) {
+		.eoe-text p {
+			font-size: 24px;
+		}
+	}
+	@media only screen and (min-width: 1024px) {
+		.eoe-text .block-title {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-			<?php
-				$bg_color = get_field('background');
-				$bg_img = get_field('background_image')['url'];
-				if($bg_img):
-					echo 'background-image: url("' . $bg_img .'");';
-				endif;
-				if( $bg_color ):
-					echo 'background-color: ' . $bg_color .';';
-				endif;
-			?>
 		}
-		.eoe-text .text * + * {
-			margin-top: 20px;
-		}
-		.eoe-text .text p + p {
-			margin-top: 10px;
-		}
-		.eoe-text p {
-			font-size: 18px;
-		}
-		.eoe-text .columns {
-			position: relative;
-		}
-		@media only screen and (min-width: 768px) {
-			.eoe-text p {
-				font-size: 24px;
-			}
-		}
-		@media only screen and (min-width: 1024px) {
-			.eoe-text .block-title {
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-		}
-	</style>
-</section>
+	}
+</style>

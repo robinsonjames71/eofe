@@ -15,8 +15,7 @@ $count = count($grid);
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 ?>
-<section id="<?php echo $anchor; ?>" class="section eoe-block eoe-text-grid <?php echo $id; ?>">
-	<div class="background fp-bg"></div>
+<section id="<?php echo $anchor; ?>" class="eoe-block eoe-text-grid <?php echo $id; ?>">
 	<div class="container is-fluid" >
 		<div class="columns is-multiline">
 			<div class="column is-12 is-3-desktop block-title">
@@ -54,70 +53,71 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 			</div>
 		</div>
 	</div>
-	<style type="text/css">
-		.<?php echo $id; ?> .background {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-			<?php
-				$bg_color = get_field('background');
-				$bg_img = get_field('background_image')['url'];
-				if($bg_img):
-					echo 'background-image: url("' . $bg_img .'");';
-				endif;
-				if( $bg_color ):
-					echo 'background-color: ' . $bg_color .';';
-				endif;
-			?>
-		}
-		.eoe-text-grid .block-title {
-			margin-bottom: 50px;
-		}
-		.eoe-text-grid .cell-inner {
-			border-left: 1px dashed black;
-			padding-left: 25px;
-			padding-right: 25px;
-		}
-		.eoe-text-grid .col-header {
-			position: relative;
-			text-align: center;
-			margin-bottom: 10px;
-		}
-		.eoe-text-grid .col-header {
+	<div class="background"></div>
+</section>
+<style type="text/css">
+	.<?php echo $id; ?> .background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		<?php
+			$bg_color = get_field('background');
+			$bg_img = get_field('background_image')['url'];
+			if($bg_img):
+				echo 'background-image: url("' . $bg_img .'");';
+			endif;
+			if( $bg_color ):
+				echo 'background-color: ' . $bg_color .';';
+			endif;
+		?>
+	}
+	.eoe-text-grid .block-title {
+		margin-bottom: 50px;
+	}
+	.eoe-text-grid .cell-inner {
+		border-left: 1px dashed black;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	.eoe-text-grid .col-header {
+		position: relative;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.eoe-text-grid .col-header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+		text-align: left;
+	}
+	.eoe-text-grid .col-title {
+		margin-left: 10px;
+		text-decoration: underline;
+	}
+	.eoe-text-grid .cell {
+		margin-bottom: 50px;
+	}
+	@media only screen and (min-width: 768px) {
+		.eoe-text-grid .grid {
 			display: flex;
-			align-items: center;
-			margin-bottom: 20px;
-			text-align: left;
-		}
-		.eoe-text-grid .col-title {
-			margin-left: 10px;
-			text-decoration: underline;
+			flex-wrap: wrap;
 		}
 		.eoe-text-grid .cell {
-			margin-bottom: 50px;
+			flex-basis: 50%;
 		}
-		@media only screen and (min-width: 768px) {
-			.eoe-text-grid .grid {
-				display: flex;
-				flex-wrap: wrap;
-			}
-			.eoe-text-grid .cell {
-				flex-basis: 50%;
-			}
+	}
+	@media only screen and (min-width: 1024px) {
+		.<?php echo $id; ?>.eoe-text-grid .cell {
+			flex-basis: <?= $count > 4 ? '33%' : '50%' ?>;
 		}
-		@media only screen and (min-width: 1024px) {
-			.<?php echo $id; ?>.eoe-text-grid .cell {
-				flex-basis: <?= $count > 4 ? '33%' : '50%' ?>;
-			}
-			.eoe-text-grid .cell {
-				margin-bottom: 100px;
-			}
-			.eoe-text-grid .col-header img {
-				max-width: 50%;
-			}
+		.eoe-text-grid .cell {
+			margin-bottom: 100px;
 		}
-	</style>
-</section>
+		.eoe-text-grid .col-header img {
+			max-width: 50%;
+		}
+	}
+</style>
