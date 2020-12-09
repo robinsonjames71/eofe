@@ -79,50 +79,10 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 			endif;
 		?>
 	}
-	.eoe-text-grid .block-title {
-		margin-bottom: 50px;
-	}
-	.eoe-text-grid .cell-inner {
-		border-left: 1px dashed black;
-		padding-left: 25px;
-		padding-right: 25px;
-	}
-	.eoe-text-grid .col-header {
-		position: relative;
-		text-align: center;
-		margin-bottom: 10px;
-	}
-	.eoe-text-grid .col-header {
-		display: flex;
-		align-items: center;
-		margin-bottom: 20px;
-		text-align: left;
-	}
-	.eoe-text-grid .col-title {
-		margin-left: 10px;
-		text-decoration: underline;
-	}
-	.eoe-text-grid .cell {
-		margin-bottom: 50px;
-	}
-	@media only screen and (min-width: 768px) {
-		.eoe-text-grid .grid {
-			display: flex;
-			flex-wrap: wrap;
-		}
-		.eoe-text-grid .cell {
-			flex-basis: 50%;
-		}
-	}
+	
 	@media only screen and (min-width: 1024px) {
 		.<?php echo $id; ?>.eoe-text-grid .cell {
 			flex-basis: <?= $count > 4 ? '33%' : '50%' ?>;
-		}
-		.eoe-text-grid .cell {
-			margin-bottom: 100px;
-		}
-		.eoe-text-grid .col-header img {
-			max-width: 50%;
 		}
 	}
 </style>

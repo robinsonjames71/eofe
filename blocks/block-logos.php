@@ -57,16 +57,4 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 			endif;
 		?>
 	}
-	.eoe-logos .logos-container {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		grid-gap: 30px 50px;
-		align-items: center;
-		justify-items: center;
-	}
-	@media only screen and (max-width: 768px) {
-		.eoe-logos .logos-container {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
 </style>

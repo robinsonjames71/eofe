@@ -20,11 +20,16 @@
 
 // Blocks
 @import "./blocks/opener.sass"
+@import "./blocks/logos.sass"
+@import "./blocks/columns.sass"
+@import "./blocks/contact.sass"
+@import "./blocks/text-grid.sass"
+@import "./blocks/text.sass"
 
 html, body
   width: 100%
   scroll-behavior: smooth
-  color: #2B404E
+  color: $black
 
 body
   overflow: hidden
@@ -35,29 +40,31 @@ body
   width: 100%
   padding-left: $mobile-gap
   padding-right: $mobile-gap
-  +tablet
+  overflow: scroll
+  padding-top: 200px
+  padding-bottom: 150px
+
+  +desktop
+    height: 100vh
     padding-left: $gap
     padding-right: $gap
-    height: calc(100vh - 200px)
+    overflow: hidden
+
+  &.scroll
     overflow: scroll
-    padding-bottom: 150px
   
 .eoe-block
   position: relative
   min-height: 100vh
   width: 100vw
   z-index: 1
-  padding-top: 200px
-  padding-bottom: 150px
+  overflow: hidden
   scroll-snap-type: y proximity
   scroll-snap-align: start
-  +tablet
-    padding-bottom: 0
-  +desktop
-    padding-top: 220px
 
-  .container, .columns
-    height: 100%
+  +desktop
+    margin-bottom: 400px
+    padding-bottom: 0
 
   .background
     -webkit-background-size: contain
@@ -65,29 +72,14 @@ body
     background-repeat: no-repeat
     background-position: 0% 100%
 
-  // .column
-  //   transform: translate(0, 0)
-  //   opacity: 1
-  //   transition: transform 0.8s, opacity 0.8s
-
-  // .column:nth-child(2)
-  //   transition-delay: 0.2s
-  // .column:nth-child(3)
-  //   transition-delay: 0.4s
-
-  // &.inactive
-  //   .column
-  //     transform: translate(50px, 100px)
-  //     opacity: 0
-
 .block-title > *
   text-decoration: underline
 
 
 h1, .h1
   font-family: $family-primary
-  font-size: $size-1
-  line-height: 1
+  font-size: $size-2
+  line-height: 100px
   font-weight: 500
   +mobile
     font-size: 52px
@@ -113,7 +105,6 @@ h4, .h4
   font-family: $family-primary
   font-size: 38px
   line-height: 46px
-  // font-size: $size-4
   +mobile
     font-size: 28px
     line-height: 32px
@@ -130,7 +121,7 @@ h5, .h5
 h6, .h6
   font-family: $family-primary
   font-weight: $weight-medium
-  font-size: $size-6
+  font-size: 20px
   +mobile
     font-size: 20px
 
@@ -138,7 +129,7 @@ p + p
   margin-top: 10px
 
 a, a:link, a:visited
-  color: #2B404E
+  color: $black
 a:hover
   color: #57937A
 

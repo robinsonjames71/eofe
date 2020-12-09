@@ -49,24 +49,4 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 			endif;
 		?>
 	}
-	.eoe-contact h2 {
-		text-align: center;
-	}
-	.eoe-contact a {
-		text-decoration: underline;
-	}
-	@media only screen and (max-width: 767px) {
-		.eoe-contact h2 {
-			font-size: 32px;
-		}
-	}
-	@media only screen and (min-width: 767px) and (max-width: 1024px) {
-		.eoe-contact h2 {
-			font-size: 64px;
-		}
-	}
-	.eoe-contact img {
-		width: 100%;
-		max-width: 640px;
-	}
 </style>

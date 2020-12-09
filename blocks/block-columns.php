@@ -69,31 +69,4 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 			endif;
 		?>
 	}
-	.eoe-columns .col-header {
-		position: relative;
-		text-align: center;
-		margin-bottom: 10px;
-	}
-	.eoe-columns .col-header img {
-		max-width: 50%;
-	}
-	@media only screen and (min-width: 768px) {
-		.eoe-columns .col-header img {
-			max-width: 80%;
-		}
-	}
-	@media only screen and (min-width: 1024px) {
-		.eoe-columns .col-header img {
-			max-width: 50%;
-		}
-		.eoe-columns .col-header {
-			display: flex;
-			align-items: center;
-			margin-bottom: 20px;
-			text-align: left;
-		}
-		.eoe-columns .col-title {
-			margin-left: 10px;
-		}
-	}
 </style>

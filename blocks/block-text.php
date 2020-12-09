@@ -51,28 +51,4 @@ $centered = get_field('centered');
 			endif;
 		?>
 	}
-	.eoe-text .text * + * {
-		margin-top: 20px;
-	}
-	.eoe-text .text p + p {
-		margin-top: 10px;
-	}
-	.eoe-text p {
-		font-size: 18px;
-	}
-	.eoe-text .columns {
-		position: relative;
-	}
-	@media only screen and (min-width: 768px) {
-		.eoe-text p {
-			font-size: 24px;
-		}
-	}
-	@media only screen and (min-width: 1024px) {
-		.eoe-text .block-title {
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-	}
 </style>
