@@ -19,7 +19,7 @@ $align_class = $block['align'] ? 'align' . $block['align'] : '';
 <section id="<?php echo $anchor; ?>" class="eoe-block  eoe-text-grid <?php echo $id; ?>" >
 	<div class="container is-fluid" >
 		<div class="columns is-multiline">
-			<div class="column is-12 is-3-desktop block-title">
+			<div class="column is-12 is-3-desktop block-title has-text-centered-touch">
 				<?= $blockTitle; ?>
 			</div>
 			<div class="column <?= $count > 4 ? 'is-9-desktop' : 'is-6-desktop is-offset-2-desktop' ?>">

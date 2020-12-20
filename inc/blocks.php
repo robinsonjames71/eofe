@@ -17,6 +17,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'testimonial', 'quote' ),
 		));
 		acf_register_block(array(
@@ -26,6 +27,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'opener', 'animation' ),
 		));
 		acf_register_block(array(
@@ -35,6 +37,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'text', 'background' ),
 		));
 		acf_register_block(array(
@@ -44,6 +47,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'text', 'image', 'background' ),
 		));
 		acf_register_block(array(
@@ -53,6 +57,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'text', 'image', 'background' ),
 		));
 		acf_register_block(array(
@@ -62,6 +67,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'grid', 'image', 'background' ),
 		));
 		acf_register_block(array(
@@ -71,6 +77,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'link', 'image', 'background' ),
 		));
 		acf_register_block(array(
@@ -80,6 +87,7 @@ function my_acf_init() {
 			'render_callback'	=> 'block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-comments',
+			'mode'				=> 'edit',
 			'keywords'			=> array( 'text', 'image', 'grid' ),
 		));
 	}

@@ -1,4 +1,5 @@
 import Rellax from "rellax";
+require("waypoints/lib/noframework.waypoints.min");
 
 (function() {
   var docHeight = document.documentElement.clientHeight;
@@ -22,7 +23,9 @@ import Rellax from "rellax";
     textOffset = "52%";
   }
 
-  if (document.querySelector(".eoe-opener")) {
+  var aniBlock = document.querySelector(".eoe-opener");
+
+  if (aniBlock) {
     var startCoords = {
       latitude: 28.671361,
       longitude: 153.588515,
@@ -171,13 +174,11 @@ import Rellax from "rellax";
     //   bottom: gifPos
     // })
 
-    var aniBlock = document.querySelector(".eoe-opener");
     var aniGif = aniBlock.querySelector(".eoe-opener .eoe-animation");
     var aniBlockBot = aniBlock.style.bottom;
     const animationWaypoint = new Waypoint({
       element: aniBlock,
       handler: (direction) => {
-        console.log({ direction });
         if (direction === "down") {
           aniGif.style.position = "absolute";
           aniGif.style.bottom = gifPos;
@@ -263,7 +264,6 @@ import Rellax from "rellax";
         .addTo(controller)
         .on("start", function(event) {
           const currentEl = event.target.triggerElement();
-          console.log(currentEl.id);
           activateMenu(currentEl.id);
           activateScroll(currentEl);
         });

@@ -1,5 +1,8 @@
 <?php
 /**
+ * East of Everything Theme
+ * 
+ * Based on
  * Timber starter-theme
  * https://github.com/timber/starter-theme
  *
@@ -19,9 +22,9 @@ function themeslug_enqueue_script() {
 	wp_enqueue_script( 'gsap_motionpath', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js', array(), false, true );
 	wp_enqueue_script( 'gsap_text', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js', array(), false, true );
 	wp_enqueue_script( 'scrollmagic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js', array(), false, true );
-	wp_enqueue_script( 'script', get_template_directory_uri() . '/dist/script.js?v=30112020', array(), false, true );
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/dist/script.js?v=11122020', array(), false, true );
 	
-	wp_enqueue_style( 'styles', get_template_directory_uri() . '/dist/style.css?v=30112020', array() );
+	wp_enqueue_style( 'styles', get_template_directory_uri() . '/dist/style.css?v=11122020', array() );
 	wp_enqueue_style( 'typekit', 'https://use.typekit.net/xxp0lov.css', array() );
 }
 
